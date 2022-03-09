@@ -1,1 +1,351 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+//Map
+$font-weights:(
+    regular: 400,
+    bold: 700
+);
+//extend
+%text{
+	text-transform: uppercase;
+}
+h2{
+	.contact{
+		@extend %text !optional;
+		text-align: center;
+	}
+}
+body {
+	background: rgb(19, 19, 19);
+	color: #fff;
+	font-family: 'Noto Sans', sans-serif;
+}
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: #353535;
+	font-size: 3rem;
+	color: #fff;
+	box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+	height: 100%;
+	width: 100%;
+	border-radius: 4px;
+	transition: all 500ms;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	&:hover {
+		box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+		transform: translateY(-3px) scale(1.1);
+	}
+}
+.photo-grid {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	grid-auto-rows: 240px;
+}
+.gallery {
+	padding: 1rem;
+}
+* {
+	margin: 0;
+}
+.navbar-dark {
+	.navbar-brand {
+		@extend %text !optional;
+		color: #fff;
+		font-size: 25px;
+		font-weight: bolder;
+		letter-spacing: 2px;
+	}
+	.navbar-nav {
+		.active {
+			>.nav-link {
+				color: #fff;
+			}
+		}
+		.nav-link {
+			font-weight: bold;
+			@extend %text !optional;
+			color: #fff;
+		}
+	}
+}
+.navbar-light {
+	.navbar-nav {
+		.nav-link.active {
+			color: #fff;
+		}
+		.nav-link.show {
+			color: #fff;
+		}
+		.show {
+			>.nav-link {
+				color: #fff;
+			}
+		}
+		.nav-link {
+			&:focus {
+				color: #fff;
+			}
+			&:hover {
+				color: #fff;
+			}
+		}
+	}
+}
+.navbar-toggler {
+	background: #fff;
+	padding: 1px 5px;
+	font-size: 18px;
+	line-height: 0.3;
+}
+.nav-link {
+	padding: .2rem 1rem;
+	&:focus {
+		color: #fff;
+	}
+}
+.nav-link.active {
+	color: #fff;
+}
+li {
+	a {
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+}
+.slide {
+	img{
+		max-height: 100%;
+		max-width: 100%;
+	}
+}
+@media (max-width:767px) {
+	.footer-dark {
+		.item {
+			&:not(.social) {
+				text-align: center;
+				padding-bottom: 20px;
+			}
+		}
+		.item.text {
+			margin-bottom: 0;
+		}
+	}
+}
+@media (max-width:990px) {
+	.footer-dark {
+		.item.social {
+			text-align: center;
+			margin-top: 20px;
+		}
+	}
+}
+.footerText {
+	font-family: 'Times New Roman', Times, serif;
+}
+.footer-dark {
+	padding: 50px 0;
+	color: #f0f9ff;
+	background-color: #0c0b0b;
+	h3 {
+		margin-top: 0;
+		margin-bottom: 12px;
+		@extend %text !optional;
+		font-weight: bold;
+		font-size: 16px;
+	}
+	ul {
+		padding: 0;
+		list-style: none;
+		line-height: 1.6;
+		font-size: 14px;
+		margin-bottom: 0;
+		a {
+			color: inherit;
+			text-decoration: none;
+			opacity: 0.6;
+			&:hover {
+				opacity: 0.8;
+			}
+		}
+	}
+	.item.text {
+		margin-bottom: 36px;
+		p {
+			color: #fff;
+			opacity: 0.6;
+			margin-bottom: 0;
+		}
+	}
+	.item.social {
+		text-align: center;
+		>a {
+			font-size: 20px;
+			width: 36px;
+			height: 36px;
+			line-height: 36px;
+			display: inline-block;
+			text-align: center;
+			border-radius: 50%;
+			box-shadow: 0 0 0 1px rgb(255, 255, 255);
+			margin: 0 8px;
+			color: white;
+			opacity: 0.75;
+		}
+	}
+}
+.copyright {
+	font-weight: bold;
+	@extend %text !optional;
+	text-align: center;
+	padding-top: 30px;
+	font-size: 15px;
+	margin-bottom: 0;
+}
+h5 {
+	font-size: 30px;
+}
+p {
+	font-size: 20px;
+}
+.card-body {
+	a {
+		font-size: 25px;
+		@extend %text !optional;
+	}
+}
+.container {
+	padding: 2rem;
+}
+.title {
+	h1 {
+		text-align: center;
+		@extend %text !optional;
+	}
+	p {
+		font-size: small;
+		text-align: center;
+		@extend %text !optional;
+	}
+}
+.shop-item {
+	margin: 30px;
+}
+.shop-item-title {
+	display: block;
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.5em;
+	color: #333;
+	margin-bottom: 15px;
+}
+.shop-item-image {
+	height: 250px;
+}
+.shop-item-details {
+	display: flex;
+	align-items: center;
+	padding: 5px;
+}
+.shop-item-price {
+	font-weight: bold;
+	flex-grow: 1;
+	color: #333;
+}
+.shop-items {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.cart-header {
+	font-weight: bold;
+	font-size: 1.25em;
+	color: #333;
+}
+.cart-column {
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid black;
+	margin-right: 1.5em;
+	padding-bottom: 10px;
+	margin-top: 10px;
+}
+.cart-row {
+	display: flex;
+	&:last-child {
+		border-bottom: 1px solid black;
+		.cart-column {
+			border: none;
+		}
+	}
+}
+.cart-item {
+	width: 45%;
+}
+.cart-price {
+	width: 20%;
+	font-size: 1.2em;
+	color: #333;
+}
+.cart-quantity {
+	width: 35%;
+}
+.cart-item-title {
+	color: #333;
+	margin-left: .5em;
+	font-size: 1.2em;
+}
+.cart-item-image {
+	width: 75px;
+	height: auto;
+	border-radius: 10px;
+}
+.btn-danger {
+	color: white;
+	background-color: #EB5757;
+	border: none;
+	border-radius: .3em;
+	font-weight: bold;
+	&:hover {
+		background-color: #CC4C4C;
+	}
+}
+.cart-quantity-input {
+	height: 34px;
+	width: 50px;
+	border-radius: 5px;
+	border: 1px solid #56CCF2;
+	background-color: #eee;
+	color: #333;
+	padding: 0;
+	text-align: center;
+	font-size: 1.2em;
+	margin-right: 25px;
+}
+.cart-total {
+	text-align: end;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+.cart-total-title {
+	font-weight: bold;
+	font-size: 1.5em;
+	color: black;
+	margin-right: 20px;
+}
+.cart-total-price {
+	color: #333;
+	font-size: 1.1em;
+}
+.btn-purchase {
+	display: block;
+	margin: 40px auto 80px auto;
+	font-size: 1.75em;
+}
